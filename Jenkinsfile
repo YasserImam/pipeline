@@ -8,7 +8,7 @@ pipeline{
     
       steps {
         echo 'Building the app'
-        echo 'App built'
+        echo 'App built successfully'
       }
     }
     
