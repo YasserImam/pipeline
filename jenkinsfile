@@ -1,6 +1,9 @@
 pipeline{
   
   agent any
+  def cmd_exec(command) {
+    return bat(returnStdout: true, script: "${command}").trim()
+  }
   
   stages {
   
@@ -9,7 +12,7 @@ pipeline{
       steps {
         echo 'Executing yarn'
         nodejs('Node-10.17') {
-            bat "yarn install"
+            cmd_exec('bat "yarn install"')
         }
       }
     }
@@ -19,7 +22,7 @@ pipeline{
       steps {
         echo 'Executing gradle'
         withGradle() {
-            bat "./gradlew -v"
+            cmd_exec('bat "./gradlew -v"')
         }
       }
     }
