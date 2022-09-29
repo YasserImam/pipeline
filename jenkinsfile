@@ -1,13 +1,13 @@
 pipeline{
   
   agent any
-  def cmd_exec(command) {
-    return bat(returnStdout: true, script: "${command}").trim()
-  }
   
   stages {
   
     stage("run frontend") {
+    def cmd_exec(command) {
+    return bat(returnStdout: true, script: "${command}").trim()
+    }
     
       steps {
         echo 'Executing yarn'
