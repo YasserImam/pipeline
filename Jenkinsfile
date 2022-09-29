@@ -4,21 +4,21 @@ pipeline{
   
   stages {
   
-    satge("build") {
+    stage("build") {
     
       steps {
         echo 'Building the app'
       }
     }
     
-    satge("test") {
+    stage("test") {
     
       steps {
         echo 'Testing the app'
       }
     }
     
-    satge("deploy") {
+    stage("deploy") {
     
       steps {
         echo 'Deploying the app'
